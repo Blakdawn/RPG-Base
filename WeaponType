@@ -1,0 +1,49 @@
+/**
+ * 
+ */
+
+/**
+ * @author BlakDawn
+ *
+ */
+public enum WeaponType {
+	
+	Fist ("Fist", "Fists"),
+	Knife ("Knife", "Knives"),
+	Dagger ("Dagger", "Daggers"),
+	ShortSword ("Short Sword", "Short Swords"),
+	LongSword ("Long Sword", "Long Swords"),
+	TwoHandedSword ("Two Handed Sword", "Two Handed Swords"),
+	Special ("SpecialS", "SpecialP"),
+	Other ("OtherS", "OtherP");
+	
+	private final String singular;
+	private final String plural;
+	
+	WeaponType(String singular, String plural)
+	{
+		this.singular = singular;
+		this.plural = plural;
+	}
+	
+	public String getSingular()
+	{
+		return singular;
+	}
+	
+	public String getPlural()
+	{
+		return plural;
+	}
+	
+	public static boolean contains(String test) {
+
+	    for (WeaponType w : WeaponType.values()) {
+	        if (w.getSingular().equals(test)) {
+	            return true;
+	        }
+	    }
+	    return false;
+	}
+
+}
