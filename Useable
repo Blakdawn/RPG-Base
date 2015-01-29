@@ -1,0 +1,24 @@
+/**
+ * 
+ */
+
+/**
+ * @author matthew
+ *
+ */
+public class Useable extends Item {
+
+	/**
+	 * 
+	 */
+	public Useable() {
+		// TODO Auto-generated constructor stub
+		super();
+	}
+	
+	public Useable(String name, int weight, int value, String description)
+	{
+		super(name, weight, value, description);
+	}
+
+}
