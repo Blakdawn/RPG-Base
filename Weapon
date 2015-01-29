@@ -1,0 +1,120 @@
+/**
+ * 
+ */
+
+/**
+ * @author BlakDawn
+ *
+ */
+public class Weapon extends Useable {
+	
+	private WeaponType weapon;
+	private float attack;
+	private float defence;
+
+	/**
+	 * 
+	 */
+	public Weapon() {
+		// TODO Auto-generated constructor stub
+		super();
+		setAttack(5);
+		weapon = WeaponType.Fist;
+	}
+	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Weapon [weapon=" + weapon + ", attack=" + attack + ", name="
+				+ name + ", weight=" + weight + ", value=" + value
+				+ ", description=" + description + "]";
+	}
+
+	public Weapon(String name, int weight, int value, String description, String weapon, float attack, float defence)
+	{
+		super(name, weight, value, description);
+		setWeapon(weapon);
+		setAttack(attack);
+		setDefence(defence);
+	}
+
+
+	/**
+	 * @return the weapon
+	 */
+	public WeaponType getWeaponType() {
+		return weapon;
+	}
+
+
+	/**
+	 * @param weapon the weapon to set
+	 */
+	public void setWeapon(String weapon) {
+		if (WeaponType.contains(weapon))
+		{
+			this.weapon = WeaponType.valueOf(weapon);
+		}
+		else
+		{
+			this.weapon = WeaponType.Fist;
+		}
+	}
+
+
+	/**
+	 * @return the attack
+	 */
+	public float getAttack() {
+		return attack;
+	}
+
+
+	/**
+	 * @param attack the attack to set
+	 */
+	public void setAttack(float attack) {
+		this.attack = attack;
+	}
+	
+	/**
+	 * @return the defence
+	 */
+	public float getDefence() {
+		return defence;
+	}
+
+	/**
+	 * @param defence the defence to set
+	 */
+	public void setDefence(float defence) {
+		this.defence = defence;
+	}
+
+	public void longDesc()
+	{
+		int NameLength = getName().length();
+		int forwardNum = (60 - NameLength) / 2;
+		String weapName = "";
+		int i = 0;
+		for(i = 0; i < forwardNum; i ++)
+		{
+			weapName = weapName + "~";
+		}
+		weapName = weapName + getName();
+		for(i = 0; i < forwardNum; i ++)
+		{
+			weapName = weapName + "~";
+		}
+		System.out.println(weapName);
+		System.out.println("Type: " + weapon.getSingular());
+		System.out.println("Attack: " + getAttack());
+		System.out.println("Defence: " + getDefence());
+		System.out.println("Weight: " + getWeight());
+		System.out.println("Value: " + getValue());
+		System.out.println("Description: " + getDescription());
+	}
+
+}
