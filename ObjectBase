@@ -1,0 +1,98 @@
+
+/**
+ * 
+ */
+
+/**
+ * @author BlakDawn
+ *
+ */
+public class ObjectBase {
+	
+	protected String name;
+	protected int weight;
+	protected int value;
+	protected String description;
+	
+	public ObjectBase()
+	{
+		setName("Test Object");
+		setWeight(1);
+		setValue(1);
+		setDescription("a Test Object");
+	}
+	
+	public ObjectBase(String name, int weight, int value, String description)
+	{
+		setName(name);
+		setWeight(weight);
+		setValue(value);
+		setDescription(description);
+	}
+	
+	public void setName(String name)
+	{
+		this.name = name;
+	}
+	
+	public void setWeight(int weight)
+	{
+		if (weight >= 0)
+		{
+			this.weight = weight;
+		}
+	}
+	
+	public void setValue(int value)
+	{
+		if(value >= 0)
+		{
+			this.value = value;
+		}
+	}
+	
+	public void setDescription(String description)
+	{
+		this.description = description;
+	}
+	
+	public String getName()
+	{
+		return name;
+	}
+	
+	public double getWeight()
+	{
+		return weight;
+	}
+	
+	public int getValue()
+	{
+		return value;
+	}
+	
+	public String getDescription()
+	{
+		return description;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "ObjectBase [name = " + name + ", weight = " + weight + ", value = "
+				+ value + ", description = " + description + "]";
+	}
+	
+	public String getNameandDesc()
+	{
+		return name + ", " + description;
+	}
+	
+	public double getValDivWeight()
+	{
+		return getValue() / getWeight();
+	}
+
+}
