@@ -1,0 +1,29 @@
+/**
+ * 
+ */
+
+/**
+ * @author BlakDawn
+ *
+ */
+public enum ArmourType {
+	
+	Clothes,
+	Light,
+	Medium,
+	Heavy,
+	Special,
+	Other;
+	
+	public static boolean contains(String test) {
+
+	    for (ArmourType a : ArmourType.values()) {
+	        if (a.name().equals(test)) {
+	            return true;
+	        }
+	    }
+
+	    return false;
+	}
+
+}
