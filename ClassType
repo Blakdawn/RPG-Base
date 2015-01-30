@@ -1,0 +1,41 @@
+/**
+ * 
+ */
+
+/**
+ * @author BlakDawn
+ *
+ */
+public enum ClassType {
+	
+	SwordAndShield ("Sword and Shield"),
+	TwoHanded ("Two Handed"),
+	DualBlade ("Dual Blade"),
+	Archer ("Archer"),
+	Medic ("Medic"),
+	Cleric ("Cleric");
+	
+	private final String className;
+	
+	ClassType(String className)
+	{
+		this.className = className;
+	}
+	
+	public String getClassName()
+	{
+		return className;
+	}
+	
+	public static boolean contains(String test) {
+
+	    for (ClassType c : ClassType.values()) {
+	        if (c.name().equals(test)) {
+	            return true;
+	        }
+	    }
+
+	    return false;
+	}
+
+}
