@@ -1,0 +1,88 @@
+/**
+ * 
+ */
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+/**
+ * @author BlakDawn
+ *
+ */
+public class NewGame {
+
+	/**
+	 * 
+	 */
+	public NewGame() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public String readInputString()
+	{
+		String s = "";
+		try {
+			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+			s = br.readLine();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return s;
+	}
+	
+	public static boolean isInteger(String str) {
+		if (str == null) {
+			return false;
+		}
+		int length = str.length();
+		if (length == 0) {
+			return false;
+		}
+		int i = 0;
+		if (str.charAt(0) == '-') {
+			if (length == 1) {
+				return false;
+			}
+			i = 1;
+		}
+		for (; i < length; i++) {
+			char c = str.charAt(i);
+			if (c <= '/' || c >= ':') {
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	public void CharGen()
+	{
+		System.out.println("hi from new game");
+		System.out.println("Name");
+		String charName = readInputString();
+		if (charName.equals(""))
+		{
+			charName = "Mr Default";
+		}
+//		System.out.println(charName);
+		System.out.println("Age 16 - 100");
+		String charAge = readInputString();
+		if (!isInteger(charAge))
+		{
+			charAge = "21";
+		}
+		int age = Integer.parseInt(charAge);
+		if ((age < 16) || (age > 100))
+		{
+			if (age < 16)
+			{
+				age = 16;
+			}
+			if (age > 100)
+			{
+				age = 100;
+			}
+		}
+		System.out.println(age);
+	}
+
+}
