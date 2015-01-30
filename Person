@@ -1,0 +1,195 @@
+import java.util.ArrayList;
+import java.util.Iterator;
+
+/**
+ * 
+ */
+
+/**
+ * @author BlakDawn
+ *
+ */
+public class Person {
+	
+	protected String name;
+	protected Sex sex;
+	protected ArrayList<ObjectBase> inventory;
+	protected Weapon weapon;
+	protected Armour armour;
+	protected int age;
+	protected String description;
+	
+	public Person()
+	{
+		setName("Mr. Testee");
+		ObjectBase ob1 = new ObjectBase();
+		ObjectBase ob2 = new ObjectBase("a new object", 10, 100, "something useful for the joruney");
+		ArrayList<ObjectBase> oa1 = new ArrayList<ObjectBase>();
+		oa1.add(ob1);
+		oa1.add(ob2);
+		Weapon w1 = new Weapon();
+		oa1.add(w1);
+		setInventory(oa1);
+		Weapon w2 = new Weapon("Shovel", 5, 1, "a shovel (wat? u r a farmer)", "other", 2, 2);
+		setWeapon(w2);
+		Armour a1 = new Armour("Farmers Clothes", 3, 1, "Farmers Clothes. Light, but useless", "Clothes", 1);
+		setArmour(a1);
+//		setiPS();
+		setAge(20);
+		setDescription("<insert obvious wish fulfillment descriptin here>");
+		Sex s1 = new Sex();
+		setSex(s1);
+	}
+
+	/**
+	 * @return the name
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * @param name the name to set
+	 */
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	/**
+	 * @return the sex
+	 */
+	public Sex getSex() {
+		return sex;
+	}
+
+	/**
+	 * @param sex the sex to set
+	 */
+	public void setSex(Sex sex) {
+		this.sex = sex;
+	}
+
+	/**
+	 * @return the iventory
+	 */
+	public ArrayList<ObjectBase> getInventory() {
+		return inventory;
+	}
+
+	/**
+	 * @param iventory the iventory to set
+	 */
+	public void setInventory(ArrayList<ObjectBase> inventory) {
+		this.inventory = inventory;
+	}
+
+	/**
+	 * @return the weapon
+	 */
+	public Weapon getWeapon() {
+		return weapon;
+	}
+
+	/**
+	 * @param weapon the weapon to set
+	 */
+	public void setWeapon(Weapon weapon) {
+		this.weapon = weapon;
+	}
+
+	/**
+	 * @return the armour
+	 */
+	public Armour getArmour() {
+		return armour;
+	}
+
+	/**
+	 * @param armour the armour to set
+	 */
+	public void setArmour(Armour armour) {
+		this.armour = armour;
+	}
+
+	/**
+	 * @return the iPS
+	 */
+//	public int getiPS() {
+//		return iPS;
+//	}
+//
+//	/**
+//	 * @param iPS the iPS to set
+//	 */
+//	public void setiPS(int iPS) {
+//		this.iPS = iPS;
+//	}
+
+	/**
+	 * @return the age
+	 */
+	public int getAge() {
+		return age;
+	}
+
+	/**
+	 * @param age the age to set
+	 */
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	/**
+	 * @return the description
+	 */
+	public String getDescription() {
+		return description;
+	}
+
+	/**
+	 * @param description the description to set
+	 */
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	
+	public double getTotInvWeight()
+	{
+		double w = 0;
+		Iterator<ObjectBase> it = inventory.iterator();
+		while(it.hasNext())
+		{
+			ObjectBase o = it.next();
+			w = w + o.getWeight();
+		}
+		return w;
+	}
+	
+	public String toString()
+	{
+		String s = "";
+		s = s + getName();
+		s = s + ", ";
+		s = s + "age " + getAge();
+		s = s + ", ";
+		s = s + getDescription();
+		s = s + ", ";
+		s = s + "clad in " + getArmour().getName();
+		s = s + ", ";
+		s = s + "wielding a " + getWeapon().getName();
+		s = s + ", ";
+		s = s + "with " + getInventory().size() + " objects";
+		s = s + " in "; 
+		s = s + getSex().getSexType().getPersonalDeterminer();
+		s = s + " inventory, weighing " + getTotInvWeight(); 
+		return s;
+	}
+	
+	public String getWeaponAsString()
+	{
+		String s = "";
+		s = getWeapon().getWeaponType().getSingular();
+		return s;
+	}
+
+}
