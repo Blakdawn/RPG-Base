@@ -1,0 +1,63 @@
+/**
+ * 
+ */
+
+/**
+ * @author BlakDawn
+ *
+ */
+public class Armour extends Useable {
+	
+	private ArmourType armour;
+	private float defence;
+	
+	public Armour()
+	{
+		super();
+		setDefence(5);
+		setArmour("Clothes");
+	}
+	
+	public Armour(String name, int weight, int value, String description, String armour, float defence)
+	{
+		super(name, weight, value, description);
+		setDefence(defence);
+		setArmour(armour);
+	}
+
+	/**
+	 * @return the defence
+	 */
+	public float getDefence() {
+		return defence;
+	}
+
+	/**
+	 * @param defence the defence to set
+	 */
+	public void setDefence(float defence) {
+		this.defence = defence;
+	}
+
+	/**
+	 * @return the armour
+	 */
+	public ArmourType getArmourType() {
+		return armour;
+	}
+
+	/**
+	 * @param armour the armour to set
+	 */
+	public void setArmour(String armour) {
+		if (ArmourType.contains(armour))
+		{
+			this.armour = ArmourType.valueOf(armour);
+		}
+		else
+		{
+			this.armour = ArmourType.Clothes;
+		}
+	}
+
+}
