@@ -1,0 +1,111 @@
+/**
+ * 
+ */
+
+/**
+ * @author BlakDawn
+ *
+ */
+public class Class {
+	
+	private ClassType theClass;
+	private int level;
+	private int levelUpLimit;
+	private int curXP;
+	private ClassTree classTree;
+
+	/**
+	 * 
+	 */
+	public Class() {
+		// TODO Auto-generated constructor stub
+	}
+
+
+	/**
+	 * @return the theClass
+	 */
+	public ClassType getTheClass() {
+		return theClass;
+	}
+
+
+	/**
+	 * @param theClass the theClass to set
+	 */
+	public void setTheClass(String theClass) {
+		if (ClassType.contains(theClass))
+		{
+			this.theClass = ClassType.valueOf(theClass);
+		}
+		else
+		{
+			this.theClass = ClassType.DualBlade;
+		}
+	}
+
+
+	/**
+	 * @return the level
+	 */
+	public int getLevel() {
+		return level;
+	}
+
+
+	/**
+	 * @param level the level to set
+	 */
+	public void setLevel(int level) {
+		this.level = level;
+	}
+
+
+	/**
+	 * @return the levelUpLimit
+	 */
+	public int getLevelUpLimit() {
+		return levelUpLimit;
+	}
+
+
+	/**
+	 * @param levelUpLimit the levelUpLimit to set
+	 */
+	public void setLevelUpLimit(int levelUpLimit) {
+		this.levelUpLimit = levelUpLimit;
+	}
+
+
+	/**
+	 * @return the curXP
+	 */
+	public int getCurXP() {
+		return curXP;
+	}
+
+
+	/**
+	 * @param curXP the curXP to set
+	 */
+	public void setCurXP(int curXP) {
+		this.curXP = curXP;
+	}
+
+
+	/**
+	 * @return the classTree
+	 */
+	public ClassTree getClassTree() {
+		return classTree;
+	}
+
+
+	/**
+	 * @param classTree the classTree to set
+	 */
+	public void setClassTree(ClassTree classTree) {
+		this.classTree = classTree;
+	}
+
+}
