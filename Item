@@ -1,0 +1,24 @@
+/**
+ * 
+ */
+
+/**
+ * @author BlakDawn
+ *
+ */
+public class Item extends ObjectBase {
+
+	/**
+	 * 
+	 */
+	public Item() {
+		// TODO Auto-generated constructor stub
+		super();
+	}
+	
+	public Item(String name, int weight, int value, String description)
+	{
+		super(name, weight, value, description);
+	}
+
+}
