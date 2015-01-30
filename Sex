@@ -1,0 +1,44 @@
+/**
+ * 
+ */
+
+/**
+ * @author BlakDawn
+ *
+ */
+public class Sex {
+	
+	private SexType sex;
+	
+	public Sex()
+	{
+		setSex("Male");
+	}
+	
+	public Sex(String sex)
+	{
+		setSex(sex);
+	}
+
+	/**
+	 * @return the sex
+	 */
+	public SexType getSexType() {
+		return sex;
+	}
+
+	/**
+	 * @param sex the sex to set
+	 */
+	public void setSex(String sex) {
+		if (SexType.contains(sex))
+		{
+			this.sex = SexType.valueOf(sex);
+		}
+		else
+		{
+			this.sex = SexType.Male;
+		}
+	}
+
+}
