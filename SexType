@@ -1,0 +1,51 @@
+
+public enum SexType {
+	
+	Male("he", "him", "his"),
+	Female("she", "her", "her"),
+	Hermaphrodite("zhe", "zier", "zer"),
+	Other("other1", "other2", "other3"),
+	Special("special1", "special2", "special3");
+	
+	private final String PersonalPronoun;
+	private final String PersonalPreposition;
+	private final String PersonalDeterminer;
+	
+	SexType(String PersonalPronoun, String PersonalPreposition, String PersonalDeterminer)
+	{
+		this.PersonalPronoun = PersonalPronoun;
+		this.PersonalPreposition = PersonalPreposition;
+		this.PersonalDeterminer = PersonalDeterminer;
+	}
+
+	/**
+	 * @return the personalPronoun
+	 */
+	public String getPersonalPronoun() {
+		return PersonalPronoun;
+	}
+
+	/**
+	 * @return the personalPreposition
+	 */
+	public String getPersonalPreposition() {
+		return PersonalPreposition;
+	}
+	
+	public static boolean contains(String test) {
+
+	    for (SexType s : SexType.values()) {
+	        if (s.name().equals(test)) {
+	            return true;
+	        }
+	    }
+	    return false;
+	}
+
+	/**
+	 * @return the personalDeterminer
+	 */
+	public String getPersonalDeterminer() {
+		return PersonalDeterminer;
+	}
+}
