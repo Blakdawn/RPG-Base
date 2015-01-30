@@ -1,0 +1,41 @@
+import java.util.ArrayList;
+
+
+public class ClassTree {
+	
+	private ArrayList<Ability> abilityList;
+	private Class classIn;
+
+	public ClassTree() {
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @return the abilityList
+	 */
+	public ArrayList<Ability> getAbilityList() {
+		return abilityList;
+	}
+
+	/**
+	 * @param abilityList the abilityList to set
+	 */
+	public void setAbilityList(ArrayList<Ability> abilityList) {
+		this.abilityList = abilityList;
+	}
+
+	/**
+	 * @return the classIn
+	 */
+	public Class getClassIn() {
+		return classIn;
+	}
+
+	/**
+	 * @param classIn the classIn to set
+	 */
+	public void setClassIn(Class classIn) {
+		this.classIn = classIn;
+	}
+
+}
