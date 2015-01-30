@@ -1,0 +1,64 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+/**
+ * 
+ */
+
+/**
+ * @author BlakDawn
+ *
+ */
+public class MainInit {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		MainInit mi = new MainInit();
+		mi.menu();
+	}
+	
+	public String readInputString()
+	{
+		String s = "";
+		try {
+			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+			s = br.readLine();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return s;
+	}
+	
+	
+	
+	public void menu()
+	{
+		System.out.println("welcome");
+		System.out.println("1. new game");
+		System.out.println("9. quit");
+		String d = "";
+		int i = 0;
+		d = readInputString();
+		d = d.trim();
+		char c = d.charAt(0);
+		i = Character.getNumericValue(c);
+		switch (i)
+		{
+		case 1 : NewGame n = new NewGame();
+			n.CharGen();
+			break;
+		case 9 : //System.out.println("exiting game");
+			System.exit(0);
+			break;
+		default :
+			break;
+		}
+	}
+
+}
